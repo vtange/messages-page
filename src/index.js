@@ -1,32 +1,32 @@
-var door = document.querySelector("#door");
-var door_back = document.querySelector("#door_back");
-door.addEventListener("click", function() {
-    open_door();
-});
-door_back.addEventListener("click", function() {
-    open_door();
-});
+// var door = document.querySelector("#door");
+// var door_back = document.querySelector("#door_back");
+// door.addEventListener("click", function() {
+//     open_box();
+// });
+// door_back.addEventListener("click", function() {
+//     open_box();
+// });
 
-var door_opened = false;
+var box_opened = false;
 
-function open_door() {
-    var door = document.querySelector("#door");
-    door.classList.add('open');
+function open_box() {
+    var lid = document.querySelector("#lid");
+    lid.classList.add('open');
 
-    if (door_opened) {
+    if (box_opened) {
         return;
     }
-    door_opened = true;
+    box_opened = true;
 
     var white_full = document.querySelector("#white-full");
     var init_page = document.querySelector('#init-page');
     var content = document.querySelector('#content');
-    
+
     white_full.style.opacity = 1;
     setTimeout(function(){
-        init_page.style.display = 'none';
-        content.style.display = "";
+        init_page.style.display = 'none'; // brown background begone
         white_full.style.opacity = 0;
+        content.style.display = "";  // makes it possible to scroll down
         init();
     }, 1000);
 }
@@ -38,7 +38,7 @@ function init() {
         mirror: true,
         once: false,
     });
-    
+
     let credits = document.querySelector('#credits');
     let credits_msnry = new Masonry(credits, {
         itemSelector: '.credits-section',
