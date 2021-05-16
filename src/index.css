@@ -125,62 +125,47 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.perspective {
-    background-color: hsla(0,0%,0%,.1);
-    background-image: linear-gradient(hsla(0,0%,0%,.1) 2.5%, transparent 2.5%, transparent 97.5%, hsla(0,0%,0%,.1) 97.5%),
-                      linear-gradient(90deg, hsla(0,0%,0%,.1) 2.5%, transparent 2.5%, transparent 97.5%, hsla(0,0%,0%,.1) 97.5%);
-    background-size: 3em 3em;
-    box-shadow: 0 0 0 .25em hsla(0,0%,0%,.2);
-    height: 9em;
-    left: 50%;
-    margin: -7.5em;
-    padding: 3em;
-    position: absolute;
-    top: 50%;
-    transform: perspective(500px) rotateX(45deg) rotateZ(0deg);
-    transform-style: preserve-3d;
-    transition: 1s;
-}
-.cube,
-.cube:after,
-.cube:before {
-    box-shadow: inset 0 0 0 .25em hsla(0,0%,0%,.1);
-    content: '';
-    float: left;
-    height: 3em;
-    position: absolute;
-    width: 3em;
-}
-/* Top */
-.cube {
-    background-color: blue;
+/*=Box=*/
+.wrapper {
+    perspective: 600px;
+    perspective-origin: 50% 100px;
+   }
+   .box {
     position: relative;
-    transform: rotateZ(0deg) translateZ(3em);
+    margin: 3em auto;
+    width: 300px;
+    transform: rotateX(-25deg);
     transform-style: preserve-3d;
-    transition: .25s;
-}
-/* Left */
-.cube:after {
-    background-color: #e55;
-    transform: rotateX(-90deg) translateY(3em);
-    transform-origin: 100% 100%;
-}
-/* Right */
-.cube:before {
-    background-color: #d44;
-    transform: rotateY(90deg) translateX(3em);
-    transform-origin: 100% 0;
-}
-/* Alternate Colour */
-.cube:nth-child(even) {
-    background-color: #fc6;
-}
-.cube:nth-child(even):after {
-    background-color: #eb5;
-}
-.cube:nth-child(even):before {
-    background-color: #da4;
-}
+   }
+   .box div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,.1);
+    box-shadow: inset 0 0 10px rgba(150,150,225,.85);
+   }
+   .box .front,.box .back,.box .top,.box .bottom {
+        width: 300px;
+   }
+   .back { transform: translateZ(-100px) rotateY(180deg); }
+
+   .right {
+    transform: rotateY(-270deg) translateX(100px) translateZ(100px);
+    transform-origin: top right;
+   }
+   .left {
+    transform: rotateY(270deg) translateX(-100px);
+    transform-origin: center left;
+   }
+   .top {
+    transform: rotateX(-90deg) translateY(-100px);
+    transform-origin: top center;
+   }
+   .bottom {
+    transform: rotateX(90deg) translateY(100px);
+    transform-origin: bottom center;
+   }
+   .front { transform: translateZ(100px); }
 
 #door_back:hover ~ #door:not(.open) {
     transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-15deg);
