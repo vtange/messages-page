@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link
-        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kosugi+Maru&family=Patrick+Hand&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Serif+JP&family=Cutive&family=Special+Elite&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     {{!-- <link rel="stylesheet" type="text/css"
@@ -51,7 +51,7 @@
     <div id="init-page">
         <div id="box-container">
             <div class="wrapper">
-                <div class="box">
+                <div id="box">
                  <div class="front"></div>
                  <div class="back"></div>
                  <div class="top"></div>
@@ -120,7 +120,7 @@
             </div>
         </section> --}}
 
-        <section id="birthday-msgs">
+        <section id="letter-msgs">
             <div class="sect-title" data-aos="fade-up">
                 <h1>Messages</h1>
                 <h3 lang="ja">手紙</h3>
@@ -128,8 +128,8 @@
             </div>
             <div class="card-columns">
                 {{#each messages}}
-                <div class="birthday-msg-card-container" data-aos="fade-up">
-                    <div class="birthday-msg-card card">
+                <div class="letter-msg-card-container" data-aos="fade-up">
+                    <div class="letter-msg-card card">
                         <div class="msg-deco"></div>
                         <div class="sender-details">
                             <div class="sender-name-container">
@@ -145,7 +145,7 @@
                                 {{/if}}
                             </div>
                         </div>
-                        <div class="birthday-msg">
+                        <div class="letter-msg">
                             <blockquote class="blockquote mb-0" {{#if isMsgInJP}}lang="ja" {{/if}}>
                                 <!-- htmlmin:ignore -->
                                 <p>{{message}}</p>

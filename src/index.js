@@ -1,17 +1,13 @@
-// var door = document.querySelector("#door");
-// var door_back = document.querySelector("#door_back");
-// door.addEventListener("click", function() {
-//     open_box();
-// });
-// door_back.addEventListener("click", function() {
-//     open_box();
-// });
+var clicker = document.querySelector("#click-hint");
+clicker.addEventListener("click", function() {
+    open_box();
+});
 
 var box_opened = false;
 
 function open_box() {
-    var lid = document.querySelector("#lid");
-    lid.classList.add('open');
+    var box = document.querySelector("#box");
+    box.classList.add('open');
 
     if (box_opened) {
         return;
