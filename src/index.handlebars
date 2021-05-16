@@ -71,12 +71,12 @@
             </div>
         </div>
     </div>
-    <!-- The fixed background with the stripes and offset border. (post door-open) -->
-    <div id="bg-container">
-        <div id="bg">
-        </div>
-    </div>
     <div id="content" style="display: none">
+        <!-- background of welcome page -->
+        <div id="bg-container">
+            <div id="bg">
+            </div>
+        </div>
         <section id="welcome-msg">
             <p lang="ja" data-aos="fade-down">あくあちゃんお誕生日おめでとう</p>
             <p lang="ja" data-aos="fade-down">海外ニキから</p>
@@ -137,12 +137,15 @@
                                 <span class="twitter-name text-muted">@{{this}}</span>
                                 {{/with}}
                             </div>
-                            <div>
-                                {{#if country_code}}
-                                <span class="flag-icon flag-icon-{{country_code}}" title="{{country_name}}"
-                                    alt="{{country_name}}"></span>
-                                {{/if}}
-                            </div>
+                            {{#if country_code}}
+                                <div class="stamp-outer">
+                                    <div class="stamp-inner">
+                                        <span class="flag-icon flag-icon-{{country_code}}" title="{{country_name}}"
+                                            alt="{{country_name}}"></span>
+                                        <span class="country-name">{{country_name}}</span>
+                                    </div>
+                                </div>
+                            {{/if}}
                         </div>
                         <div class="letter-msg">
                             <blockquote class="blockquote mb-0" {{#if isMsgInJP}}lang="ja" {{/if}}>
