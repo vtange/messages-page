@@ -139,10 +139,11 @@
                             </div>
                             {{#if country_code}}
                                 <div class="stamp-outer">
-                                    <div class="stamp-inner">
+                                    <div class="stamp-inner" data-code="{{country_code}}">
                                         <span class="flag-icon flag-icon-{{country_code}}" title="{{country_name}}"
                                             alt="{{country_name}}"></span>
-                                        <span class="country-name">{{country_name}}</span>
+                                        <span class="stamp-amt">50</span>
+                                        <div class="country-name">{{country_name_stamp}}</div>
                                     </div>
                                 </div>
                             {{/if}}

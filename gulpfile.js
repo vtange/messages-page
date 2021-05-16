@@ -45,23 +45,25 @@ async function build_html() {
             if (record[6] !== '') {
                 message = record[6];
             }
-            
+
             if (country) {
                 search_country_code = countries.getAlpha2Code(country, 'en');
                 if (search_country_code) {
                     country_code = search_country_code.toLowerCase();
-                    country_name = countries.getName(search_country_code, "en") + ' / ' + countries.getName(search_country_code, "ja");
+                    country_name = countries.getName(search_country_code, "en");
+                    country_name_stamp = countries.getName(search_country_code, "ja", {select: "alias"});
+                    if (country_name_stamp === "アメリカ合衆国") country_name_stamp = "アメリカ";
                 }
             }
 
             // https://stackoverflow.com/questions/15033196/using-javascript-to-check-whether-a-string-contains-japanese-characters-includi/15034560
             var jpCharacters = message.match(/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/);
 
-            // if there isn't a match, then message is not in Japanese, pass this value to the handlebars file. 
+            // if there isn't a match, then message is not in Japanese, pass this value to the handlebars file.
             // if there is no JP character and translation is not provided, then the message is in JP
             var isMsgInJP = !(jpCharacters === null) && record[6] === ""
 
-            
+
             if (twitter.startsWith("@") || twitter.startsWith("＠")) {
                 twitter = twitter.substring(1);
             }
@@ -72,6 +74,7 @@ async function build_html() {
                 twitter: twitter,
                 country: country,
                 country_name: country_name,
+                country_name_stamp: country_name_stamp,
                 country_code: country_code,
                 message: message,
                 isMsgInJP: isMsgInJP,
@@ -99,12 +102,12 @@ async function build_html() {
     // ori, thumbnail name
     let artbook_data = [
         {
-            fullpage: "artbook/Cover.png", 
+            fullpage: "artbook/Cover.png",
             thumbnail: "artbook/thumbs/Cover_t.jpg",
             thumbnail_small: "artbook/thumbs_small/Cover_t.jpg",
         },
         {
-            fullpage: "artbook/Page_1.png", 
+            fullpage: "artbook/Page_1.png",
             thumbnail: "artbook/thumbs/Page_1_t.jpg",
             thumbnail_small: "artbook/thumbs_small/Page_1_t.jpg",
         },

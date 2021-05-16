@@ -14,14 +14,15 @@ body {
     z-index: -1;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
 }
 
 #bg {
     height: 100%;
     background-color: darkslateblue;
+    background-image: url(./img/wood-texture.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -395,11 +396,75 @@ blockquote>p {
     left: 7px;
     bottom: 26px;
     right: 6px;
+    background-color: lightblue;
+}
+
+.stamp-inner[data-code="us"]{
+    background-color: cornflowerblue;
+}
+
+.stamp-inner[data-code="jp"]{
+    background-color: darkseagreen;
+}
+
+.stamp-inner[data-code="id"]{
+    background-color: lightseagreen;
+}
+
+.stamp-inner[data-code="ca"]{
+    background-color: burlywood;
+}
+
+.stamp-inner[data-code="au"]{
+    background-color: silver;
+}
+
+.stamp-inner[data-code="nz"]{
+    background-color: lavender;
+}
+
+.stamp-inner[data-code="gb"]{
     background-color: plum;
 }
 
+.stamp-inner[data-code="ph"]{
+    background-color: goldenrod;
+}
+
+.stamp-inner[data-code="sg"]{
+    background-color: cadetblue;
+}
+
+.stamp-inner[data-code="vn"]{
+    background-color: lightpink;
+}
+
+.stamp-inner[data-code="kz"]{
+    background-color: yellowgreen;
+}
+
+
+.stamp-amt {
+    font-family: "Merriweather";
+    font-size: 1.4em;
+    position: absolute;
+    color: rgba(255,255,255,0.90);
+    margin-left: -2px;
+    margin-top: -4px;
+}
+
+.country-name {
+    font-family: cursive;
+    font-size: 0.7em;
+    font-weight: 600;
+    height: 30px;
+    margin-left: 4px;
+    color: rgba(0,0,0,0.5);
+}
+
 .flag-icon {
-    font-size: 2.75rem;
+    font-size: 2rem;
+    margin: 4px;
     box-shadow: 0 0 3px rgb(100 100 100);
 }
 
