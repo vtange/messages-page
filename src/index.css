@@ -119,6 +119,64 @@ body {
     transform: translateY(-20vh);
 }
 
+#lid {
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    transform: rotateX(-25deg);
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+#lid div {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    box-shadow: inset 0 -5px 10px rgba(50,50,50,.85);
+}
+
+#lid .front, #lid .back, #lid .top, #lid .bottom {
+    width: 300px;
+}
+
+#lid .top, #lid .bottom {
+    height: 200px;
+}
+
+#lid .front {
+    background: rgba(255,0,0,.1);
+    transform: translateZ(200px) translateY(-60px);
+}
+
+#lid .back {
+    background: rgba(255,255,255,.1);
+    transform: translateY(-60px) rotateY(180deg);
+}
+
+#lid .top {
+    background: rgba(255,255,0,.1);
+    transform:  rotateX(-90deg) translateZ(-60px) translateY(-200px);
+    transform-origin: top center;
+}
+
+#lid .bottom {
+    background: rgba(0,0,255,.1);
+    transform: rotateX(90deg) translateY(200px) translateZ(200px);
+    transform-origin: bottom center;
+}
+
+#lid .left {
+    background: rgba(0,255,255,.1);
+    transform: rotateY(270deg) translateX(0px) translateY(-60px);
+    transform-origin: center left;
+}
+
+#lid .right {
+    background: rgba(0,255,0,.1);
+    transform: rotateY(-270deg) translateY(-60px) translateZ(100px);
+    transform-origin: top right;
+}
+
 #box {
     position: relative;
     margin: 0 auto;
@@ -135,7 +193,7 @@ body {
     box-shadow: inset 0 -5px 10px rgba(50,50,50,.85);
 }
 
-#box .front,#box .back,#box .top,#box .bottom {
+#box .front, #box .back, #box .top, #box .bottom {
     width: 300px;
 }
 
@@ -143,37 +201,37 @@ body {
     height: 200px;
 }
 
-.front {
+#box .front {
     background: rgba(255,0,0,.1);
-    transform: translateZ(200px) translateY(-60px);
+    transform: translateZ(200px);
 }
 
-.back {
+#box .back {
     background: rgba(255,255,255,.1);
-    transform: translateY(-60px) rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-.top {
+#box .top {
     background: rgba(255,255,0,.1);
-    transform:  rotateX(-90deg) translateZ(-60px) translateY(-200px);
+    transform:  rotateX(-90deg) translateY(-200px);
     transform-origin: top center;
 }
 
-.bottom {
+#box .bottom {
     background: rgba(0,0,255,.1);
-    transform: rotateX(90deg) translateY(200px) translateZ(200px);
+    transform: rotateX(90deg) translateY(200px) translateZ(140px);
     transform-origin: bottom center;
 }
 
-.left {
+#box .left {
     background: rgba(0,255,255,.1);
-    transform: rotateY(270deg) translateX(0px) translateY(-60px);
+    transform: rotateY(270deg) translateX(0px);
     transform-origin: center left;
 }
 
-.right {
+#box .right {
     background: rgba(0,255,0,.1);
-    transform: rotateY(-270deg) translateY(-60px) translateZ(100px);
+    transform: rotateY(-270deg)translateZ(100px);
     transform-origin: top right;
 }
 
