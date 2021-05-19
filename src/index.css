@@ -126,6 +126,7 @@ body {
     transform: rotateX(-25deg);
     transform-style: preserve-3d;
     transition: all 1s ease;
+    z-index: 999;
 }
 
 #lid div {
@@ -144,17 +145,17 @@ body {
 }
 
 #lid .front {
-    background: rgba(255,0,0,.1);
+    background: rgba(255,0,0,.21);
     transform: translateZ(200px) translateY(-60px);
 }
 
 #lid .back {
-    background: rgba(255,255,255,.1);
+    background: rgba(255,255,255,.21);
     transform: translateY(-60px) rotateY(180deg);
 }
 
 #lid .top {
-    background: rgba(255,255,0,.1);
+    background: rgba(255,255,0,.21);
     transform:  rotateX(-90deg) translateZ(-60px) translateY(-200px);
     transform-origin: top center;
 }
@@ -233,6 +234,15 @@ body {
     background: rgba(0,255,0,.1);
     transform: rotateY(-270deg)translateZ(100px);
     transform-origin: top right;
+}
+
+#box .table-surface {
+    background: rgba(255,255,255,1);
+    height: 600px;
+    width: 600px;
+    transform: rotateX(90deg) translateX(-150px) translateY(300px) translateZ(479px);
+    transform-origin: bottom center;
+    transition: all 1s ease;
 }
 
 #door_back:hover ~ #door:not(.open) {
