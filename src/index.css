@@ -120,6 +120,7 @@ body {
 }
 
 #lid {
+    cursor: pointer;
     position: relative;
     margin: 0 auto;
     width: 300px;
@@ -128,6 +129,14 @@ body {
     transition: all 1s ease;
     z-index: 999;
 }
+
+#lid:hover {
+    transform: rotateX(-22deg);
+}
+#lid.open {
+    transform: rotateX(35deg);
+}
+
 
 #lid div {
     position: absolute;
@@ -192,6 +201,10 @@ body {
     width: 200px;
     height: 120px;
     box-shadow: inset 0 -5px 10px rgba(50,50,50,.85);
+}
+
+#box div:not(.table-surface) {
+    cursor: pointer;
 }
 
 #box .front, #box .back, #box .top, #box .bottom {

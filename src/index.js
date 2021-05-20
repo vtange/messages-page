@@ -1,13 +1,17 @@
-var clicker = document.querySelector("#click-hint");
-clicker.addEventListener("click", function() {
+var lid = document.querySelector("#lid");
+lid.addEventListener("click", function() {
+    open_box();
+});
+var box = document.querySelector("#box .front");
+box.addEventListener("click", function() {
     open_box();
 });
 
 var box_opened = false;
 
 function open_box() {
-    var box = document.querySelector("#box");
-    box.classList.add('open');
+    var lid = document.querySelector("#lid");
+    lid.classList.add('open');
 
     if (box_opened) {
         return;
