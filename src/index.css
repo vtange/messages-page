@@ -139,6 +139,7 @@ body {
 
 
 #lid div {
+    background: url(./img/wood-texture.jpg);
     position: absolute;
     width: 200px;
     height: 60px;
@@ -154,17 +155,14 @@ body {
 }
 
 #lid .front {
-    background: rgba(255,0,0,.21);
     transform: translateZ(200px) translateY(-60px);
 }
 
 #lid .back {
-    background: rgba(255,255,255,.21);
     transform: translateY(-60px) rotateY(180deg);
 }
 
 #lid .top {
-    background: rgba(255,255,0,.21);
     transform:  rotateX(-90deg) translateZ(-60px) translateY(-200px);
     transform-origin: top center;
 }
@@ -176,13 +174,11 @@ body {
 }
 
 #lid .left {
-    background: rgba(0,255,255,.1);
     transform: rotateY(270deg) translateX(0px) translateY(-60px);
     transform-origin: center left;
 }
 
 #lid .right {
-    background: rgba(0,255,0,.1);
     transform: rotateY(-270deg) translateY(-60px) translateZ(100px);
     transform-origin: top right;
 }
@@ -197,6 +193,7 @@ body {
 }
 
 #box div {
+    background: url(./img/wood-texture.jpg);
     position: absolute;
     width: 200px;
     height: 120px;
@@ -216,12 +213,10 @@ body {
 }
 
 #box .front {
-    background: rgba(255,0,0,.1);
     transform: translateZ(200px);
 }
 
 #box .back {
-    background: rgba(255,255,255,.1);
     transform: rotateY(180deg);
 }
 
@@ -232,19 +227,16 @@ body {
 }
 
 #box .bottom {
-    background: rgba(0,0,255,.1);
     transform: rotateX(90deg) translateY(200px) translateZ(80px);
     transform-origin: bottom center;
 }
 
 #box .left {
-    background: rgba(0,255,255,.1);
     transform: rotateY(270deg) translateX(0px);
     transform-origin: center left;
 }
 
 #box .right {
-    background: rgba(0,255,0,.1);
     transform: rotateY(-270deg)translateZ(100px);
     transform-origin: top right;
 }
