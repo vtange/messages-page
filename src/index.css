@@ -33,7 +33,7 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-color: #AC8367;
+    background-color: aliceblue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,11 +139,13 @@ body {
 
 
 #lid div {
-    background: url(./img/wood-texture.jpg);
+    background-image: url(./img/boxlid.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
     width: 200px;
     height: 60px;
-    box-shadow: inset 0 -5px 10px rgba(50,50,50,.85);
+    box-shadow: inset 0 0 2px rgba(50,50,50,.85);
 }
 
 #lid .front, #lid .back, #lid .top, #lid .bottom {
@@ -151,6 +153,7 @@ body {
 }
 
 #lid .top, #lid .bottom {
+    background-image: url(./img/boxtop.jpg);
     height: 200px;
 }
 
@@ -193,11 +196,13 @@ body {
 }
 
 #box div {
-    background: url(./img/wood-texture.jpg);
+    background-image: url(./img/boxbody.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
     width: 200px;
     height: 120px;
-    box-shadow: inset 0 -5px 10px rgba(50,50,50,.85);
+    box-shadow: inset 0 0 2px rgba(59, 49, 46, 0.85);
 }
 
 #box div:not(.table-surface) {
@@ -217,11 +222,12 @@ body {
 }
 
 #box .back {
+    filter: brightness(0.8);
     transform: rotateY(180deg);
 }
 
 #box .top {
-    background: rgba(255,255,0,.1);
+    background-image: url(./img/boxedge.png);
     transform:  rotateX(-90deg) translateY(-200px);
     transform-origin: top center;
 }
@@ -232,17 +238,19 @@ body {
 }
 
 #box .left {
-    transform: rotateY(270deg) translateX(0px);
+    filter: brightness(0.9);
+    transform: rotateY(270deg) translateZ(-19px) translateX(0px);
     transform-origin: center left;
 }
 
 #box .right {
-    transform: rotateY(-270deg)translateZ(100px);
+    filter: brightness(0.7);
+    transform: rotateY(-270deg) translateZ(81px);
     transform-origin: top right;
 }
 
 #box .table-surface {
-    background: rgba(255,255,255,1);
+    background-image: url(./img/mat.jpg);
     height: 600px;
     width: 600px;
     transform: rotateX(90deg) translateX(-150px) translateY(300px) translateZ(479px);
