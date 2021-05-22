@@ -113,7 +113,7 @@ body {
 .wrapper {
     perspective: 600px;
     perspective-origin: 50% 100px;
-    transform: translateY(-20vh) scale(1.5);
+    transform: translateY(-10vh) scale(1.5);
 }
 
 #lid {
@@ -121,10 +121,14 @@ body {
     position: relative;
     margin: 0 auto;
     width: 300px;
-    transform: rotateX(25deg);
+    transform: rotateX(-25deg);
     transform-style: preserve-3d;
     transition: all 1s ease;
     z-index: 999;
+}
+
+#lid:hover {
+    transform: rotateX(-22deg);
 }
 
 #lid.open {
