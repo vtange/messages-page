@@ -121,15 +121,12 @@ body {
     position: relative;
     margin: 0 auto;
     width: 300px;
-    transform: rotateX(-25deg);
+    transform: rotateX(25deg);
     transform-style: preserve-3d;
     transition: all 1s ease;
     z-index: 999;
 }
 
-#lid:hover {
-    transform: rotateX(-22deg);
-}
 #lid.open {
     transform: rotateX(35deg);
 }
@@ -145,11 +142,11 @@ body {
     box-shadow: inset 0 0 2px rgba(50,50,50,.85);
 }
 
-#lid .front, #lid .back, #lid .top, #lid .bottom {
+#lid .front, #lid .back, #lid .top,#lid .top-inside, #lid .bottom {
     width: 300px;
 }
 
-#lid .top, #lid .bottom {
+#lid .top,#lid .top-inside, #lid .bottom {
     background-image: url(./img/boxtop.jpg);
     height: 200px;
 }
@@ -159,6 +156,7 @@ body {
 }
 
 #lid .back {
+    filter: brightness(0.6);
     transform: translateY(-60px) rotateY(180deg);
 }
 
@@ -167,19 +165,28 @@ body {
     transform-origin: top center;
 }
 
+#lid .top-inside {
+    filter: brightness(0.7);
+    transform:  rotateX(-90deg) translateZ(-30px) translateY(-200px);
+    transform-origin: top center;
+}
+
 #lid .bottom {
-    background: rgba(0,0,255,.1);
+    filter: brightness(0.7);
+    background-image: url(./img/boxedge.png);
     transform: rotateX(90deg) translateY(200px) translateZ(200px);
     transform-origin: bottom center;
 }
 
 #lid .left {
-    transform: rotateY(270deg) translateX(0px) translateY(-60px);
+    filter: brightness(0.7);
+    transform: rotateY(270deg) translateZ(-19px) translateY(-60px);
     transform-origin: center left;
 }
 
 #lid .right {
-    transform: rotateY(-270deg) translateY(-60px) translateZ(100px);
+    filter: brightness(0.5);
+    transform: rotateY(-270deg) translateY(-60px) translateZ(81px);
     transform-origin: top right;
 }
 
