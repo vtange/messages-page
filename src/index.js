@@ -22,12 +22,16 @@ function open_box() {
     var init_page = document.querySelector('#init-page');
     var content = document.querySelector('#content');
 
-    white_full.style.opacity = 1;
     setTimeout(function(){
-        init_page.style.display = 'none'; // brown background begone
-        white_full.style.opacity = 0;
-        content.style.display = "";  // makes it possible to scroll down
-        init();
+        white_full.style.opacity = 1;
+        setTimeout(function(){
+            init_page.style.display = 'none'; // box begone
+            content.style.display = "";  // makes it possible to scroll down
+            init();
+            setTimeout(function(){
+                white_full.style.opacity = 0;
+            }, 500);
+        }, 1000);
     }, 1000);
 }
 
