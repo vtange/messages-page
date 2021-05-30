@@ -7,6 +7,16 @@ box.addEventListener("click", function() {
     open_box();
 });
 
+// Pass in the id of an element
+let confetti = new Confetti('lid');
+
+// Edit given parameters
+confetti.setCount(75);
+confetti.setSize(2);
+confetti.setPower(35);
+confetti.setFade(false);
+confetti.destroyTarget(false);
+
 var box_opened = false;
 
 function open_box() {
