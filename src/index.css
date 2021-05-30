@@ -658,6 +658,18 @@ blockquote>p {
     #letter-msgs .card-columns {
         column-count: 3;
     }
+    /*=Box=*/
+    .wrapper {
+        transform: translateY(-10vh) scale(1.3);
+    }
+}
+
+/* medium lrg */
+@media (min-width: 1200px) {
+    /*=Box=*/
+    .wrapper {
+        transform: translateY(-10vh) scale(1.5);
+    }
 }
 
 @media (min-width: 1400px) {}
