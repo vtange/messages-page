@@ -105,8 +105,6 @@ body {
     /* background-color: #333; */
     position: relative;
     margin: 0 auto;
-    /* If user resizes the screen */
-    transition: all 0.5s ease-in-out;
 }
 
 /*=Box=*/
@@ -114,6 +112,8 @@ body {
     perspective: 600px;
     perspective-origin: 50% 100px;
     transform: translateY(-10vh) scale(1.5);
+    /* If user resizes the screen */
+    transition: all 0.5s ease-in-out;
 }
 
 #lid {
@@ -627,21 +627,33 @@ blockquote>p {
     padding: 15px;
 }
 
+/* smallest */
 @media (max-width: 700px) {
     #letter-msgs .card-columns {
         column-count: 1;
     }
+
+    /*=Box=*/
+    .wrapper {
+        transform: translateY(-10vh) scale(0.8);
+    }
 }
 
+/* medium */
 @media (min-width: 700px) {
     #welcome-msg {
         font-size: 3em;
+    }
+    /*=Box=*/
+    .wrapper {
+        transform: translateY(-10vh) scale(1.1);
     }
     #letter-msgs .card-columns {
         column-count: 2;
     }
 }
 
+/* largest */
 @media (min-width: 1000px) {
     #letter-msgs .card-columns {
         column-count: 3;
