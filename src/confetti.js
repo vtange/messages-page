@@ -8,7 +8,7 @@ const Confetti = (() => {
         l = !0,
         a = [],
         d = (new Date).getTime();
-
+    var pause = false;
     function p(zz) {
         let zze = document.getElementById(zz);
         function rstCnvas() {
@@ -64,7 +64,7 @@ const Confetti = (() => {
         "boolean" == typeof e ? s = e : console.error("[ERROR] Confetti.setFade() - Input needs to be of type 'boolean'")
     }), p.prototype.destroyTarget = (e => {
         "boolean" == typeof e ? l = e : console.error("[ERROR] Confetti.destroyTarget() - Input needs to be of type 'boolean'")
-    }),  p.prototype.fire = (e => {
+    }), p.prototype.fire = (e => {
         ! function (e, t) {
             let o = [];
             for (let i = 0; i < n; i++) o.push(c(e, t));
@@ -72,7 +72,10 @@ const Confetti = (() => {
                 particles: o
             })
         }(2 * e.clientX, 2 * e.clientY), l && (e.target.style.visibility = "hidden")
+    }), p.prototype.pause = (e => {
+        pause = true;
     }), window.requestAnimationFrame(function t(n) {
+        if (pause) return;
         let i = (n - d) / 1e3;
         d = n;
         for (let t = a.length - 1; t >= 0; t--) {

@@ -40,6 +40,7 @@ function open_box() {
     setTimeout(function(){
         white_full.style.opacity = 1;
         setTimeout(function(){
+            confetti.pause();
             init_page.style.display = 'none'; // box begone
             content.style.display = "";  // makes it possible to scroll down
             init();
