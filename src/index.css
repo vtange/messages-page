@@ -116,6 +116,12 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
+#confetti {
+    height: 100vh;
+    position: absolute;
+    width: 100vw;
+}
+
 #lid {
     cursor: pointer;
     position: relative;
