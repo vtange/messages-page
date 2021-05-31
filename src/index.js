@@ -1,16 +1,18 @@
 var lid = document.querySelector("#lid");
-lid.addEventListener("click", function() {
+lid.addEventListener("click", function(e) {
+    confetti.fire(e);
     open_box();
 });
 var box = document.querySelector("#box .front");
-box.addEventListener("click", function() {
+box.addEventListener("click", function(e) {
+    confetti.fire(e);
     open_box();
 });
 
 // var confettiRainSettings = { target: 'confetti' };
 // var confettiRain = new ConfettiGenerator(confettiSettings);
 // Pass in the id of an element
-let confetti = new Confetti('lid', 'confetti');
+var confetti = new Confetti('confetti');
 
 // Edit given parameters
 confetti.setCount(75);

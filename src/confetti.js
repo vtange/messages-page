@@ -9,8 +9,7 @@ const Confetti = (() => {
         a = [],
         d = (new Date).getTime();
 
-    function p(e, zz) {
-        let t = document.getElementById(e);
+    function p(zz) {
         let zze = document.getElementById(zz);
         function rstCnvas() {
             zze.width = 2 * window.innerWidth, zze.height = 2 * window.innerHeight;
@@ -18,16 +17,6 @@ const Confetti = (() => {
         rstCnvas();
         o = zze.getContext("2d");
         window.addEventListener("resize", rstCnvas);
-        if (t === null) return;
-        t.addEventListener("click", e => {
-            ! function (e, t) {
-                let o = [];
-                for (let i = 0; i < n; i++) o.push(c(e, t));
-                a.push({
-                    particles: o
-                })
-            }(2 * e.clientX, 2 * e.clientY), l && (e.target.style.visibility = "hidden")
-        })
     }
 
     function y(e) {
@@ -74,6 +63,14 @@ const Confetti = (() => {
         "boolean" == typeof e ? s = e : console.error("[ERROR] Confetti.setFade() - Input needs to be of type 'boolean'")
     }), p.prototype.destroyTarget = (e => {
         "boolean" == typeof e ? l = e : console.error("[ERROR] Confetti.destroyTarget() - Input needs to be of type 'boolean'")
+    }),  p.prototype.fire = (e => {
+        ! function (e, t) {
+            let o = [];
+            for (let i = 0; i < n; i++) o.push(c(e, t));
+            a.push({
+                particles: o
+            })
+        }(2 * e.clientX, 2 * e.clientY), l && (e.target.style.visibility = "hidden")
     }), window.requestAnimationFrame(function t(n) {
         let i = (n - d) / 1e3;
         d = n;
