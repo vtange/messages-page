@@ -15,9 +15,9 @@ box.addEventListener("click", function(e) {
 var confetti = new Confetti('confetti');
 
 // Edit given parameters
-confetti.setCount(75);
+confetti.setCount(125);
 confetti.setSize(2);
-confetti.setPower(65);
+confetti.setPower(55);
 confetti.setFade(false);
 confetti.destroyTarget(false);
 

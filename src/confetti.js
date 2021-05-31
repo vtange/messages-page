@@ -24,8 +24,9 @@ const Confetti = (() => {
     }
 
     function c(e, t) {
-        let o = (16 * Math.random() + 4) * r,
-            n = (4 * Math.random() + 4) * r;
+        let rand = Math.random();
+        let o = (16 * rand + 4) * r,
+            n = (4 * rand + 4) * r;
         return {
             pos: {
                 x: e - o / 2,
@@ -36,17 +37,17 @@ const Confetti = (() => {
                 x: o,
                 y: n
             },
-            rotation: 360 * Math.random(),
-            rotation_speed: 10 * (Math.random() - .5),
-            hue: 360 * Math.random(),
+            rotation: 360 * rand,
+            rotation_speed: 10 * (rand - .5),
+            hue: 360 * rand,
             opacity: 100,
-            lifetime: Math.random() + .25
+            lifetime: rand + .25
         }
     }
 
     function h() {
         let e = Math.random() - .5,
-            t = Math.random() - .7,
+            t = Math.random() - 1.2,
             o = Math.sqrt(e * e + t * t);
         return t /= o, {
             x: (e /= o) * (Math.random() * i),
