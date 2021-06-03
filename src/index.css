@@ -41,14 +41,6 @@ body {
     justify-content: center;
 }
 
-#click-hint {
-    position: absolute;
-    left: 8%;
-    top: 39%;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-}
-
 @keyframes ldio-7p7zzvmvrrd {
     0% {
         top: 40px;
@@ -211,7 +203,6 @@ body {
     width: 300px;
     transform: rotateX(-25deg);
     transform-style: preserve-3d;
-    transition: all 1s ease;
 }
 
 #box div {
@@ -274,19 +265,6 @@ body {
     width: 600px;
     transform: rotateX(90deg) translateX(-150px) translateY(300px) translateZ(479px);
     transform-origin: bottom center;
-    transition: all 1s ease;
-}
-
-#door_back:hover ~ #door:not(.open) {
-    transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-15deg);
-}
-
-#door:hover:not(.open) {
-    transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-15deg);
-}
-
-#door.open {
-    transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
 }
 
 #white-full {
