@@ -9,8 +9,8 @@ box.addEventListener("click", function(e) {
     open_box();
 });
 
-// var confettiRainSettings = { target: 'confetti' };
-// var confettiRain = new ConfettiGenerator(confettiSettings);
+var confettiRainSettings = { target: 'confettiRain', clock: 12 };
+var confettiRain = new ConfettiGenerator(confettiRainSettings);
 // Pass in the id of an element
 var confetti = new Confetti('confetti');
 
@@ -31,7 +31,6 @@ function open_box() {
         return;
     }
     box_opened = true;
-    // confettiRain.render();
 
     var white_full = document.querySelector("#white-full");
     var init_page = document.querySelector('#init-page');
@@ -41,6 +40,7 @@ function open_box() {
         white_full.style.opacity = 1;
         setTimeout(function(){
             confetti.pause();
+            confettiRain.render();
             init_page.style.display = 'none'; // box begone
             content.style.display = "";  // makes it possible to scroll down
             init();
