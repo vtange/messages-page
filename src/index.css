@@ -291,7 +291,7 @@ body {
     width: 30rem;
     height: 30rem;
     position: absolute;
-    right: 15%;
+    right: 0;
 }
 
 #moon {
@@ -662,7 +662,7 @@ blockquote>p {
 /* medium */
 @media (min-width: 700px) {
     #welcome-msg {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     /*=Box=*/
     .wrapper {
@@ -675,6 +675,16 @@ blockquote>p {
 
 /* largest */
 @media (min-width: 1000px) {
+    #daifuku-constell {
+        width: 39rem;
+        height: 39rem;
+        transform: translateX(-12vw);
+    }
+
+    #welcome-msg {
+        font-size: 3rem;
+    }
+
     #letter-msgs .card-columns {
         column-count: 3;
     }
