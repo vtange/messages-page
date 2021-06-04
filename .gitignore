@@ -3,4 +3,5 @@ artbook
 audio
 *.png
 !dist/img/boxedge.png
+!dist/img/daifukusm.png
 *.ico
