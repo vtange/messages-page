@@ -638,12 +638,12 @@ blockquote>p {
 /* smallest */
 @media (max-width: 450px) {
     #welcome-msg {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     /*=Box=*/
     .wrapper {
-        transform: translateY(-10vh) scale(0.6);
+        transform: translateY(-10vh) scale(0.45);
     }
 }
 
