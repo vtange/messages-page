@@ -637,8 +637,30 @@ blockquote>p {
 
 /* smallest */
 @media (max-width: 450px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+
     #welcome-msg {
         font-size: 1.25rem;
+    }
+    .sender-name {
+        font-size: 1rem;
+    }
+    .twitter-name {
+        font-size: 0.8rem;
+    }
+    .letter-msg p {
+        font-size: 0.95rem;
+    }
+
+    .sect-title-deco {
+        height: 5rem;
+        opacity: 0.3;
+        width: 3rem;
     }
 
     /*=Box=*/
@@ -648,7 +670,7 @@ blockquote>p {
 }
 
 
-@media (max-width: 700px) {
+@media (min-width: 450px) {
     #letter-msgs .card-columns {
         column-count: 1;
     }
