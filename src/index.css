@@ -204,7 +204,7 @@ body {
 
 /* interior */
 #lid .top-inside {
-    background-image: url(./img/carpetred.jpg);
+    background: whitesmoke;
 }
 
 #box {
