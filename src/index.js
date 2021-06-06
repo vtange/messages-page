@@ -24,8 +24,8 @@ confetti.destroyTarget(false);
 var box_opened = false;
 
 function open_box() {
-    var lid = document.querySelector("#lid");
-    lid.classList.add('open');
+    var box = document.getElementById("box-container");
+    box.classList.add('open');
 
     if (box_opened) {
         return;

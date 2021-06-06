@@ -130,16 +130,19 @@ body {
     position: relative;
     margin: 0 auto;
     width: 300px;
-    transform: rotateX(35deg);
+    transform: rotateX(-25deg);
     transform-style: preserve-3d;
     transition: all 1s ease;
     z-index: 999;
 }
 
-#lid.open {
-    transform: rotateX(35deg);
+#lid:hover {
+    transform: rotateX(-22deg);
 }
 
+#box-container.open #lid {
+    transform: rotateX(35deg);
+}
 
 #lid div {
     background-image: url(./img/boxlid.jpg);
@@ -274,6 +277,11 @@ body {
     height: 100%;
     transform-style: flat;
     transition: transform 10s linear;
+    transition-delay: 0.75s;
+}
+
+#box-container.open .gear {
+    transform: rotate(720deg);
 }
 
 #box .disk {
