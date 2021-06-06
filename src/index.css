@@ -130,14 +130,10 @@ body {
     position: relative;
     margin: 0 auto;
     width: 300px;
-    transform: rotateX(-25deg);
+    transform: rotateX(35deg);
     transform-style: preserve-3d;
     transition: all 1s ease;
     z-index: 999;
-}
-
-#lid:hover {
-    transform: rotateX(-22deg);
 }
 
 #lid.open {
@@ -160,7 +156,6 @@ body {
 }
 
 #lid .top,#lid .top-inside, #lid .bottom {
-    background-image: url(./img/boxtop.jpg);
     height: 200px;
 }
 
@@ -174,13 +169,14 @@ body {
 }
 
 #lid .top {
+    background-image: url(./img/boxtop.jpg);
     transform:  rotateX(-90deg) translateZ(-60px) translateY(-200px);
     transform-origin: top center;
 }
 
 #lid .top-inside {
     filter: brightness(0.7);
-    transform:  rotateX(-90deg) translateZ(-30px) translateY(-200px);
+    transform:  rotateX(-90deg) translateZ(-40px) translateY(-200px);
     transform-origin: top center;
 }
 
@@ -201,6 +197,11 @@ body {
     filter: brightness(0.5);
     transform: rotateY(-270deg) translateY(-60px) translateZ(81px);
     transform-origin: top right;
+}
+
+/* interior */
+#lid .top-inside {
+    background-image: url(./img/carpetred.jpg);
 }
 
 #box {
@@ -225,11 +226,11 @@ body {
     cursor: pointer;
 }
 
-#box .front, #box .back, #box .top, #box .bottom {
+#box .front, #box .back, #box .top, #box .bottom, #box .disk {
     width: 300px;
 }
 
-#box .top,#box .bottom {
+#box .top,#box .bottom, #box .disk{
     height: 200px;
 }
 
@@ -238,7 +239,7 @@ body {
 }
 
 #box .back {
-    filter: brightness(0.8);
+    filter: brightness(0.6);
     transform: rotateY(180deg);
 }
 
@@ -248,8 +249,16 @@ body {
     transform-origin: top center;
 }
 
+#box .disk {
+    background-image: url(./img/brassdisk.png);
+    background-size: contain;
+    transform: rotateX(90deg) scale(0.8) translateY(200px) translateZ(160px);
+    transform-origin: bottom center;
+}
+
 #box .bottom {
-    transform: rotateX(90deg) translateY(200px) translateZ(80px);
+    filter: brightness(0.7);
+    transform: rotateX(90deg) translateY(200px) translateZ(150px);
     transform-origin: bottom center;
 }
 
@@ -260,7 +269,7 @@ body {
 }
 
 #box .right {
-    filter: brightness(0.7);
+    filter: brightness(0.5);
     transform: rotateY(-270deg) translateZ(81px);
     transform-origin: top right;
 }
