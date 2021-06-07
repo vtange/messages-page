@@ -41,63 +41,6 @@ body {
     justify-content: center;
 }
 
-@keyframes ldio-7p7zzvmvrrd {
-    0% {
-        top: 40px;
-        left: 40px;
-        width: 0;
-        height: 0;
-        opacity: 1;
-    }
-    100% {
-        top: 5px;
-        left: 5px;
-        width: 70px;
-        height: 70px;
-        opacity: 0;
-    }
-}
-
-.ldio-7p7zzvmvrrd div {
-    position: absolute;
-    border-width: 10px;
-    border-style: solid;
-    opacity: 1;
-    border-radius: 50%;
-    /*animation: ldio-7p7zzvmvrrd 2.2222222222222223s cubic-bezier(0, 0.2, 0.8, 1) infinite;*/
-}
-
-.ldio-7p7zzvmvrrd div:nth-child(1) {
-    border-color: #ffffff
-}
-
-.ldio-7p7zzvmvrrd div:nth-child(2) {
-    border-color: #f8f8f8;
-    animation-delay: -1.1111111111111112s;
-}
-
-.loadingio-spinner-ripple-3zk4unnnmgj {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    overflow: hidden;
-    background: none;
-}
-
-.ldio-7p7zzvmvrrd {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform: translateZ(0) scale(1);
-    backface-visibility: hidden;
-    transform-origin: 0 0;
-    /* see note above */
-}
-
-.ldio-7p7zzvmvrrd div {
-    box-sizing: content-box;
-}
-
 #box-container {
     /* background-color: #333; */
     position: relative;
@@ -187,7 +130,7 @@ body {
 
 #lid .bottom {
     filter: brightness(0.7);
-    background-color: #7e322f;
+    background-color: transparent;
     background-image: url(./img/boxedge.png);
     transform: rotateX(90deg) translateY(200px) translateZ(200px);
     transform-origin: bottom center;
@@ -254,7 +197,7 @@ body {
 }
 
 #box .top {
-    background-color: #7e322f;
+    background-color: transparent;
     background-image: url(./img/boxedge.png);
     transform:  rotateX(-90deg) translateY(-200px);
     transform-origin: top center;
@@ -268,6 +211,7 @@ body {
 }
 
 #box .gear-container {
+    background-color: transparent;
     background-image: none;
     transform: rotateX(90deg) translateX(170px) translateY(130px) translateZ(60px);
     transform-origin: bottom center;
@@ -276,6 +220,7 @@ body {
 }
 
 #box .gear {
+    background-color: transparent;
     background-image: url(./img/gear.png);
     background-size: contain;
     width: 100%;
@@ -290,6 +235,7 @@ body {
 }
 
 #box .disk {
+    background-color: transparent;
     background-image: url(./img/brassdisk.png);
     background-size: contain;
     transform: rotateX(90deg) scale(0.85) translateY(200px) translateZ(160px);
@@ -315,6 +261,7 @@ body {
 }
 
 #box .table-surface {
+    background-color: #c1d9f3;
     background-image: url(./img/mat.jpg);
     height: 600px;
     width: 600px;

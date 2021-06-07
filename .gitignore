@@ -4,4 +4,7 @@ audio
 *.png
 !dist/img/boxedge.png
 !dist/img/daifukusm.png
+!dist/img/arm.png
+!dist/img/gear.png
+!dist/img/brassdisk.png
 *.ico
