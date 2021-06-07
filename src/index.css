@@ -52,8 +52,6 @@ body {
     perspective: 600px;
     perspective-origin: 50% 100px;
     transform: translateY(-10vh) scale(1.5);
-    /* If user resizes the screen */
-    transition: all 0.5s ease-in-out;
 }
 
 #confetti {
