@@ -32,9 +32,9 @@ function open_box() {
     }
     box_opened = true;
 
-    var white_full = document.querySelector("#white-full");
-    var init_page = document.querySelector('#init-page');
-    var content = document.querySelector('#content');
+    var white_full = document.getElementById("white-full");
+    var init_page = document.getElementById('init-page');
+    var content = document.getElementById('content');
 
     setTimeout(function(){
         white_full.style.opacity = 1;
@@ -42,7 +42,7 @@ function open_box() {
             confetti.pause();
             confettiRain.render();
             init_page.style.display = 'none'; // box begone
-            content.style.display = "";  // makes it possible to scroll down
+            content.classList.add('open');
             init();
             setTimeout(function(){
                 white_full.style.opacity = 0;

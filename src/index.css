@@ -145,6 +145,7 @@ body {
 }
 
 #lid div {
+    background-color: #7e322f;
     background-image: url(./img/boxlid.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -172,6 +173,7 @@ body {
 }
 
 #lid .top {
+    background-color: #7e322f;
     background-image: url(./img/boxtop.jpg);
     transform:  rotateX(-90deg) translateZ(-60px) translateY(-200px);
     transform-origin: top center;
@@ -185,6 +187,7 @@ body {
 
 #lid .bottom {
     filter: brightness(0.7);
+    background-color: #7e322f;
     background-image: url(./img/boxedge.png);
     transform: rotateX(90deg) translateY(200px) translateZ(200px);
     transform-origin: bottom center;
@@ -216,6 +219,7 @@ body {
 }
 
 #box div {
+    background-color: #7e322f;
     background-image: url(./img/boxbody.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -250,6 +254,7 @@ body {
 }
 
 #box .top {
+    background-color: #7e322f;
     background-image: url(./img/boxedge.png);
     transform:  rotateX(-90deg) translateY(-200px);
     transform-origin: top center;
@@ -322,20 +327,23 @@ body {
     position: absolute;
     background-color: white;
     width: 100%;
-    height: 100%;
+    height: 200%; /* counter acts issue in iphones where the browser UI causes scroll and screws with 100vh. */
     z-index: 3;
     transition: opacity 0.5s ease-in-out;
     pointer-events: none;
 }
 
 #daifuku-constell {
-    background-image: url('img/daifukusm.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 30rem;
     height: 30rem;
     position: absolute;
     right: 0;
+}
+
+#content.open #daifuku-constell {
+    background-image: url('img/daifukusm.png');
 }
 
 #moon {
@@ -475,10 +483,13 @@ body {
 }
 
 #letter-msgs, #artbook {
-    background-image: url(./img/seamless.jpg);
     background-size: contain;
     background-repeat: repeat;
     padding: 1px;
+}
+
+#content.open #letter-msgs, #content.open #artbook {
+    background-image: url('img/seamless.jpg');
 }
 
 #artbook {
