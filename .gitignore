@@ -1,8 +1,6 @@
 node_modules
 artbook
-audio
 *.png
-!dist/audio
 !dist/img/boxedge.png
 !dist/img/daifukusm.png
 !dist/img/arm.png
