@@ -699,7 +699,6 @@ blockquote>p {
     }
 }
 
-/* largest */
 @media (min-width: 1000px) {
     #daifuku-constell {
         width: 39rem;
@@ -720,7 +719,7 @@ blockquote>p {
     }
 }
 
-/* medium lrg */
+/* lrg */
 @media (min-width: 1200px) {
     /*=Box=*/
     .wrapper {

@@ -21,6 +21,17 @@ confetti.setPower(55);
 confetti.setFade(false);
 confetti.destroyTarget(false);
 
+var musicbox_shouldPlay = false;
+var musicbox_audioLoaded = false;
+var audioElement = new Audio('audio/Blue_Clapper_music_box_ver_040621.mp3');
+audioElement.addEventListener('canplaythrough', () => {
+  // let duration = audioElement.duration;
+  // The duration variable now holds the duration (in seconds) of the audio clip
+  musicbox_audioLoaded = true;
+  if (musicbox_shouldPlay) {
+    audioElement.play();
+  }
+})
 var box_opened = false;
 
 function open_box() {
@@ -45,6 +56,11 @@ function open_box() {
             content.classList.add('open');
             init();
             setTimeout(function(){
+                if (musicbox_audioLoaded) {
+                    audioElement.play();
+                } else {
+                    musicbox_shouldPlay = true;
+                }
                 white_full.style.opacity = 0;
             }, 500);
         }, 1000);
