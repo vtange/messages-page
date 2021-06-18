@@ -28,6 +28,7 @@ audioElement.addEventListener('canplaythrough', () => {
   // let duration = audioElement.duration;
   // The duration variable now holds the duration (in seconds) of the audio clip
   musicbox_audioLoaded = true;
+  audioElement.volume = targetVolume;
   if (musicbox_shouldPlay) {
     audioElement.play();
   }
@@ -55,12 +56,12 @@ function open_box() {
             init_page.style.display = 'none'; // box begone
             content.classList.add('open');
             init();
+            if (musicbox_audioLoaded) {
+                audioElement.play();
+            } else {
+                musicbox_shouldPlay = true;
+            }
             setTimeout(function(){
-                if (musicbox_audioLoaded) {
-                    audioElement.play();
-                } else {
-                    musicbox_shouldPlay = true;
-                }
                 white_full.style.opacity = 0;
             }, 500);
         }, 1000);
@@ -75,20 +76,50 @@ function init() {
         once: false,
     });
 
-    let credits = document.querySelector('#credits');
-    let credits_msnry = new Masonry(credits, {
-        itemSelector: '.credits-section',
-        columnWidth: 300
-    });
-
-    // new GreenAudioPlayer('#cover-audio-container');
-
     let gallery_a = new SimpleLightbox('#artbook-gallery a');
     gallery_a.on('error.simplelightbox', function (e) {
         console.log(e); // some usefull information
     });
+}
 
-    credits_msnry.on('layoutComplete', function(){
-        AOS.refresh();
-    });
+var ytplayer;
+function onYouTubeIframeAPIReady() {
+    ytplayer = new YT.Player('ytplayer', {
+        videoId: '0NOcQ9IOX9U',
+        playerVars: {
+            'playsinline': 1
+        },
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+        });
+}
+
+// event that will be fired when the state of the video player changes
+function onPlayerStateChange(event) {
+    console.log("onPlayerStateChange", event.data);
+  if(event.data == -1 || event.data == 1) {
+    // unstarted or playing
+    targetVolume = 0;
+    crudeFadeVolume();
+  } else if (event.data == 0 || event.data == 2) {
+    // stopped or paused
+    targetVolume = 0.4;
+    crudeFadeVolume();
+  }
+}
+
+var volumeChangeInterval = null;
+var targetVolume = 0.4;
+function crudeFadeVolume() {
+    console.log(audioElement.volume, "->", targetVolume);
+    if (audioElement.volume !== targetVolume) {
+        if (volumeChangeInterval) window.clearInterval(volumeChangeInterval);
+        volumeChangeInterval = window.setInterval(function(){
+            audioElement.volume = (audioElement.volume < targetVolume ? Math.min(0.4, audioElement.volume+0.1) : Math.max(0, audioElement.volume-0.1));
+        },100);
+    } else if (volumeChangeInterval) {
+        window.clearInterval(volumeChangeInterval);
+        volumeChangeInterval = null;
+    }
 }
