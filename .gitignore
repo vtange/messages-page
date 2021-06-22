@@ -1,10 +1,11 @@
 node_modules
 artbook
 *.png
-!dist/img/boxedge.png
-!dist/img/daifukusm.png
 !dist/img/arm.png
-!dist/img/gear.png
+!dist/img/boxedge.png
 !dist/img/brassdisk.png
+!dist/img/daifukusm.png
+!dist/img/gear.png
 !dist/img/stamp_border.png
+!dist/img/volume.png
 *.ico

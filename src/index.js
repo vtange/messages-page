@@ -94,29 +94,38 @@ function onYouTubeIframeAPIReady() {
         }
         });
 }
-
+var oldTargetVolume = 0;
 // event that will be fired when the state of the video player changes
 function onPlayerStateChange(event) {
-    console.log("onPlayerStateChange", event.data);
   if(event.data == -1 || event.data == 1) {
     // unstarted or playing
+    slider.disabled = true;
+    oldTargetVolume = targetVolume;
     targetVolume = 0;
     crudeFadeVolume();
   } else if (event.data == 0 || event.data == 2) {
+    slider.disabled = false;
     // stopped or paused
-    targetVolume = 0.4;
+    targetVolume = oldTargetVolume;
     crudeFadeVolume();
   }
 }
 
+var slider = document.getElementById("musicbox-volume");
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function(e) {
+    window.clearInterval(volumeChangeInterval);
+    targetVolume = Math.min(1,this.value/100);
+    audioElement.volume = targetVolume;
+}
+
 var volumeChangeInterval = null;
-var targetVolume = 0.4;
+var targetVolume = 0.5;
 function crudeFadeVolume() {
-    console.log(audioElement.volume, "->", targetVolume);
     if (audioElement.volume !== targetVolume) {
         if (volumeChangeInterval) window.clearInterval(volumeChangeInterval);
         volumeChangeInterval = window.setInterval(function(){
-            audioElement.volume = (audioElement.volume < targetVolume ? Math.min(0.4, audioElement.volume+0.1) : Math.max(0, audioElement.volume-0.1));
+            audioElement.volume = (audioElement.volume < targetVolume ? Math.min(targetVolume, audioElement.volume+0.1) : Math.max(0, audioElement.volume-0.1));
         },100);
     } else if (volumeChangeInterval) {
         window.clearInterval(volumeChangeInterval);

@@ -267,6 +267,17 @@ body {
     transform-origin: bottom center;
 }
 
+.slidercontainer {
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid pink;
+    display: flex;
+    padding: 4px 8px;
+    position: fixed;
+    z-index: 9;
+}
+
 #white-full {
     opacity: 0;
     position: absolute;
