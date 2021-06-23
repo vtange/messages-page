@@ -20,7 +20,7 @@ body {
 #bg {
     height: 100%;
     background: rgb(6,0,36);
-    background: linear-gradient(180deg, rgba(6,0,36,1) 0%, rgba(40,9,121,1) 35%, rgba(59,37,105,1) 100%);
+    background: linear-gradient(180deg, rgba(6,0,36,1) 0%, rgba(40,9,121,1) 35%, rgb(25, 22, 54) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -347,7 +347,7 @@ body {
     padding-left: 5%;
     padding-right: 5%;
     color: white;
-    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    text-shadow: 0 0 3px pink;
 }
 
 #scroll-arrow-hint span {
@@ -658,8 +658,15 @@ blockquote>p {
 
 #credits {
     color: white;
+    display: flex;
+    flex-direction: row;
     font-family: 'Noto Serif JP', serif;
     padding: 15px;
+}
+
+#credits h4 {
+    color: rgb(255, 214, 221);
+    text-shadow: 0 0 4px pink;
 }
 
 #credits a,
