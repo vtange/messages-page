@@ -347,7 +347,7 @@ body {
     padding-left: 5%;
     padding-right: 5%;
     color: white;
-    text-shadow: 0 0 3px pink;
+    text-shadow: 0 0 4px pink;
 }
 
 #scroll-arrow-hint span {
@@ -666,7 +666,7 @@ blockquote>p {
 
 #credits h4 {
     color: rgb(255, 214, 221);
-    text-shadow: 0 0 4px pink;
+    text-shadow: 0 0 3px pink;
 }
 
 #credits a,
