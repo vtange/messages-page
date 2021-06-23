@@ -86,6 +86,7 @@ const Confetti = (() => {
             }
             0 == o.particles.length && a.splice(t, 1)
         }! function () {
+            if (!o) return;
             o.clearRect(0, 0, 2 * window.innerWidth, 2 * window.innerHeight);
             for (const d of a)
                 for (const a of d.particles) e = a.pos.x, t = a.pos.y, n = a.size.x, i = a.size.y, r = a.rotation, s = a.hue, l = a.opacity, o.save(), o.beginPath(), o.translate(e + n / 2, t + i / 2), o.rotate(r * Math.PI / 180), o.rect(-n / 2, -i / 2, n, i), o.fillStyle = `hsla(${s}deg, 90%, 65%, ${l}%)`, o.fill(), o.restore();

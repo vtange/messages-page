@@ -24,7 +24,7 @@ confetti.destroyTarget(false);
 var musicbox_shouldPlay = false;
 var musicbox_audioLoaded = false;
 var audioElement = new Audio('audio/Blue_Clapper_music_box_ver_040621v2.mp3');
-audioElement.addEventListener('canplaythrough', () => {
+audioElement.addEventListener('canplaythrough', function() {
   // let duration = audioElement.duration;
   // The duration variable now holds the duration (in seconds) of the audio clip
   musicbox_audioLoaded = true;
@@ -35,6 +35,11 @@ audioElement.addEventListener('canplaythrough', () => {
   }
 })
 var box_opened = false;
+var init_page = document.getElementById('init-page');
+if (window.getComputedStyle(init_page).transform === "scale(0)") {
+    // uses -ms- prefix aka IE.
+    open_box();
+}
 
 function open_box() {
     var box = document.getElementById("box-container");
@@ -46,7 +51,6 @@ function open_box() {
     box_opened = true;
 
     var white_full = document.getElementById("white-full");
-    var init_page = document.getElementById('init-page');
     var content = document.getElementById('content');
 
     setTimeout(function(){

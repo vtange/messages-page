@@ -37,6 +37,7 @@ body {
     overflow: hidden;
     background-color: aliceblue;
     display: flex;
+    -ms-transform: scale(0);
     align-items: center;
     justify-content: center;
 }
