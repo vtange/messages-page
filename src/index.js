@@ -29,7 +29,7 @@ audioElement.addEventListener('canplaythrough', function() {
   // The duration variable now holds the duration (in seconds) of the audio clip
   musicbox_audioLoaded = true;
   audioElement.loop = true;
-  audioElement.volume = targetVolume;
+  audioElement.volume = slider.value/100;
   if (musicbox_shouldPlay) {
     audioElement.play();
   }
@@ -135,7 +135,5 @@ function mute(isMuted){
 var slider = document.getElementById("musicbox-volume");
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function(e) {
-    window.clearInterval(volumeChangeInterval);
-    targetVolume = Math.min(1,this.value/100);
-    audioElement.volume = targetVolume;
+    audioElement.volume = Math.min(1,this.value/100);
 }
