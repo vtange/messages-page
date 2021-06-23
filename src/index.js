@@ -28,6 +28,7 @@ audioElement.addEventListener('canplaythrough', () => {
   // let duration = audioElement.duration;
   // The duration variable now holds the duration (in seconds) of the audio clip
   musicbox_audioLoaded = true;
+  audioElement.loop = true;
   audioElement.volume = targetVolume;
   if (musicbox_shouldPlay) {
     audioElement.play();
@@ -94,21 +95,37 @@ function onYouTubeIframeAPIReady() {
         }
         });
 }
-var oldTargetVolume = 0;
 // event that will be fired when the state of the video player changes
 function onPlayerStateChange(event) {
   if(event.data == -1 || event.data == 1) {
     // unstarted or playing
-    slider.disabled = true;
-    oldTargetVolume = targetVolume;
-    targetVolume = 0;
-    crudeFadeVolume();
+    mute(true);
+    volumeIcon.style.pointerEvents = "none";
   } else if (event.data == 0 || event.data == 2) {
-    slider.disabled = false;
     // stopped or paused
-    targetVolume = oldTargetVolume;
-    crudeFadeVolume();
+    mute(false);
+    volumeIcon.style.pointerEvents = "";
   }
+}
+
+var volumeIcon = document.getElementById("volume-icon");
+volumeIcon.addEventListener("click", function(e) {
+    if (audioElement.muted) {
+        mute(false);
+    } else {
+        mute(true);
+    }
+});
+
+function mute(isMuted){
+    if (isMuted){
+        volumeIcon.classList.add("muted");
+    } else {
+        volumeIcon.classList.remove("muted");
+    }
+    slider.disabled = isMuted;
+    audioElement.muted = isMuted;
+
 }
 
 var slider = document.getElementById("musicbox-volume");
@@ -117,18 +134,4 @@ slider.oninput = function(e) {
     window.clearInterval(volumeChangeInterval);
     targetVolume = Math.min(1,this.value/100);
     audioElement.volume = targetVolume;
-}
-
-var volumeChangeInterval = null;
-var targetVolume = 0.5;
-function crudeFadeVolume() {
-    if (audioElement.volume !== targetVolume) {
-        if (volumeChangeInterval) window.clearInterval(volumeChangeInterval);
-        volumeChangeInterval = window.setInterval(function(){
-            audioElement.volume = (audioElement.volume < targetVolume ? Math.min(targetVolume, audioElement.volume+0.1) : Math.max(0, audioElement.volume-0.1));
-        },100);
-    } else if (volumeChangeInterval) {
-        window.clearInterval(volumeChangeInterval);
-        volumeChangeInterval = null;
-    }
 }
