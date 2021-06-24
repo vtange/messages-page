@@ -31,7 +31,7 @@ audioElement.addEventListener('canplaythrough', function() {
   audioElement.loop = true;
   audioElement.volume = slider.value/100;
   if (musicbox_shouldPlay) {
-    audioElement.play();
+    //audioElement.play();
   }
 })
 var box_opened = false;
@@ -57,12 +57,12 @@ function open_box() {
         white_full.style.opacity = 1;
         setTimeout(function(){
             confetti.pause();
-            confettiRain.render();
+            //confettiRain.render();
             init_page.style.display = 'none'; // box begone
             content.classList.add('open');
             init();
             if (musicbox_audioLoaded) {
-                audioElement.play();
+                //audioElement.play();
             } else {
                 musicbox_shouldPlay = true;
             }

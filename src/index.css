@@ -28,6 +28,7 @@ body {
 
 #content {
     position: relative;
+    overflow-x: hidden;
 }
 
 #init-page {
@@ -312,13 +313,31 @@ body {
     pointer-events: none;
 }
 
-#daifuku-constell {
+.sky {
+    margin: auto;
+    position:relative;
+    width: 100%;
+}
+
+.sky > div {
     background-size: contain;
     background-repeat: no-repeat;
-    width: 30rem;
-    height: 30rem;
+}
+
+#daifuku-constell {
+    width: 20rem;
+    height: 20rem;
     position: absolute;
-    right: 0;
+    right: -2rem;
+    top: 4rem;
+}
+
+#moon {
+    width: 5rem;
+    height: 5rem;
+    left: 2rem;
+    top: 3rem;
+    position: absolute;
 }
 
 #content:not(.open) {
@@ -329,8 +348,8 @@ body {
     background-image: url('img/daifukusm.png');
 }
 
-#moon {
-
+#content.open #moon {
+    background-image: url('img/moon.png');
 }
 
 .star {
@@ -659,8 +678,7 @@ blockquote>p {
 
 #credits {
     color: white;
-    display: flex;
-    flex-direction: row;
+    column-count: 1;
     font-family: 'Noto Serif JP', serif;
     padding: 15px;
 }
@@ -731,6 +749,18 @@ blockquote>p {
 
 /* medium */
 @media (min-width: 700px) {
+    #credits {
+        display: flex;
+        flex-direction: row;
+    }
+    #daifuku-constell {
+        width: 30rem;
+        height: 30rem;
+        top:0;
+    }
+    .sky {
+        width: 75%;
+    }
     #welcome-msg {
         font-size: 2.5rem;
     }
@@ -744,10 +774,13 @@ blockquote>p {
 }
 
 @media (min-width: 1000px) {
+    #moon {
+        width: 9rem;
+        height: 9rem;
+    }
     #daifuku-constell {
         width: 39rem;
         height: 39rem;
-        transform: translateX(-12vw);
     }
 
     #welcome-msg {
