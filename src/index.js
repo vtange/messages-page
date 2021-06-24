@@ -25,13 +25,11 @@ var musicbox_shouldPlay = false;
 var musicbox_audioLoaded = false;
 var audioElement = new Audio('audio/Blue_Clapper_music_box_ver_040621v2.mp3');
 audioElement.addEventListener('canplaythrough', function() {
-  // let duration = audioElement.duration;
-  // The duration variable now holds the duration (in seconds) of the audio clip
   musicbox_audioLoaded = true;
   audioElement.loop = true;
   audioElement.volume = slider.value/100;
   if (musicbox_shouldPlay) {
-    //audioElement.play();
+    audioElement.play();
   }
 })
 var box_opened = false;
@@ -57,12 +55,12 @@ function open_box() {
         white_full.style.opacity = 1;
         setTimeout(function(){
             confetti.pause();
-            //confettiRain.render();
+            confettiRain.render();
             init_page.style.display = 'none'; // box begone
             content.classList.add('open');
             init();
             if (musicbox_audioLoaded) {
-                //audioElement.play();
+                audioElement.play();
             } else {
                 musicbox_shouldPlay = true;
             }
