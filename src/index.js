@@ -111,6 +111,7 @@ function onPlayerStateChange(event) {
   }
 }
 
+var volumeCont = document.getElementById("volume-container");
 var volumeIcon = document.getElementById("volume-icon");
 volumeIcon.addEventListener("click", function(e) {
     if (audioElement.muted) {
@@ -122,9 +123,9 @@ volumeIcon.addEventListener("click", function(e) {
 
 function mute(isMuted){
     if (isMuted){
-        volumeIcon.classList.add("muted");
+        volumeCont.classList.add("muted");
     } else {
-        volumeIcon.classList.remove("muted");
+        volumeCont.classList.remove("muted");
     }
     slider.disabled = isMuted;
     audioElement.muted = isMuted;

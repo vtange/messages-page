@@ -270,36 +270,97 @@ body {
 }
 
 #volume-icon {
+    border: 2px solid mediumaquamarine;
+    border-radius: 10px;
+    background-color: rgba(127, 255, 212, 0.2);
     cursor: pointer;
+    display: flex;
     height: 40px;
-    width: 40px;
-    position: relative;
+    width: 76px;
+    margin-right: 4px;
+}
+
+#volume-container.muted #volume-icon {
+    background-color: rgba(128, 128, 128, 0.1);
+    border-color: grey;
 }
 
 #volume-icon img {
-    position: absolute;
-    left: 8px;
-    top: 8px;
+    margin: 6px 0 0 6px;
 }
 
-#volume-icon.muted img:first-of-type,
-#volume-icon:not(.muted) img:last-of-type {
+#volume-container.muted #volume-icon:after {
+    content: "OFF";
+    color: grey;
+}
+#volume-container:not(.muted) #volume-icon:after {
+    content: "ON";
+    color: mediumaquamarine;
+    margin-left: 4px;
+}
+
+#volume-icon:after {
+    font-family: arial;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+#volume-container.muted > #volume-icon > img:first-of-type,
+#volume-container:not(.muted) > #volume-icon > img:last-of-type {
     display: none;
 }
 
-.slider-container {
+#volume-container {
     align-items: center;
-    background: #fbfeff;
-    border-radius: 5px;
-    box-shadow: 0 0 3px rgb(100 100 100);
+    background: transparent;
     display: flex;
     padding: 0 8px 0 0;
     position: fixed;
+    user-select: none;
     z-index: 9;
 }
 
-.slider-container input {
+#volume-container input {
     cursor: pointer;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    background: rgb(233,255,254);
+    background: linear-gradient(270deg, rgb(213, 255, 253) 0%, rgb(175,238,238) 100%);
+    border: 1px solid teal;
+    height: 8px;
+    border-radius: 5px;
+}
+.slider:disabled {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    background: rgb(170, 170, 170);
+    border-color: rgb(116, 116, 116);
+}
+
+#volume-container:not(.muted) .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    border: 2px solid #46aaa0;
+    background: white;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+#volume-container:not(.muted) .slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    border: 2px solid #46aaa0;
+    background: white;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
 }
 
 #white-full {
