@@ -87,7 +87,6 @@ function init() {
 
 var ytplayer;
 function onYouTubeIframeAPIReady() {
-    console.log("ytplayer");
     ytplayer = new YT.Player('ytplayer', {
         videoId: '0NOcQ9IOX9U',
         playerVars: {
