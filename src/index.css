@@ -328,7 +328,8 @@ body {
 .slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    background: rgb(233,255,254);
+    background: rgb(204, 255, 252);
+    background-color: rgb(204, 255, 252);
     background: linear-gradient(270deg, rgb(213, 255, 253) 0%, rgb(175,238,238) 100%);
     border: 1px solid teal;
     height: 8px;
