@@ -272,7 +272,7 @@ body {
 #volume-icon {
     border: 2px solid mediumaquamarine;
     border-radius: 10px;
-    background-color: rgba(127, 255, 212, 0.2);
+    background-color: white;
     cursor: pointer;
     display: flex;
     height: 40px;
@@ -281,7 +281,6 @@ body {
 }
 
 #volume-container.muted #volume-icon {
-    background-color: rgba(128, 128, 128, 0.1);
     border-color: grey;
 }
 
