@@ -785,15 +785,57 @@ blockquote>p {
 }
 
 .stamp-deco {
-    background-image: url(./img/rose.png);
+    background-image: url(./img/sak.png);
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    opacity: 0.88;
     right: -10px;
     bottom: 6px;
     width: 3rem;
     height: 2.5rem;
+}
+
+.letter-msg-card-container:nth-child(2) .stamp-inner[data-code="jp"] .stamp-deco {
+    background-image: url(./img/chrys.png);
+}
+
+.stamp-inner[data-code="us"] .stamp-deco,
+.stamp-inner[data-code="ca"] .stamp-deco,
+.stamp-inner[data-code="au"] .stamp-deco,
+.stamp-inner[data-code="nz"] .stamp-deco,
+.stamp-inner[data-code="de"] .stamp-deco,
+.stamp-inner[data-code="fr"] .stamp-deco,
+.stamp-inner[data-code="gb"] .stamp-deco {
+    background-image: url(./img/rose.png);
+}
+
+.stamp-inner[data-code="ph"] .stamp-deco,
+.stamp-inner[data-code="my"] .stamp-deco {
+    background-image: url(./img/hib2.png);
+}
+
+.stamp-inner[data-code="id"] .stamp-deco,
+.stamp-inner[data-code="sg"] .stamp-deco,
+.stamp-inner[data-code="tw"] .stamp-deco,
+.stamp-inner[data-code="vn"] .stamp-deco {
+    background-image: url(./img/hib1.png);
+}
+
+.stamp-inner[data-code="in"] .stamp-deco,
+.stamp-inner[data-code="br"] .stamp-deco {
+    background-image: url(./img/cos.png);
+}
+
+.stamp-inner[data-code="es"] .stamp-deco,
+.stamp-inner[data-code="it"] .stamp-deco,
+.stamp-inner[data-code="mx"] .stamp-deco {
+    background-image: url(./img/sun.png);
+}
+
+.stamp-inner[data-code="dk"] .stamp-deco,
+.stamp-inner[data-code="fi"] .stamp-deco,
+.stamp-inner[data-code="ru"] .stamp-deco {
+    background-image: url(./img/flake.png);
 }
 
 .country-name {
