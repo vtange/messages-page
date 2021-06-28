@@ -24,6 +24,26 @@ function minifycss() {
         .pipe(dest('dist'));
 }
 
+const postageOverrides = {
+    /* note: canada uses a P in a maple leaf and we have to handle this in the hbs file. */
+    us: "$1.20",
+    jp: "84",
+    br: "R$2,05",
+    de: "100",
+    fr: "€1.30",
+    gb: "£4.20",
+    hk: "$5",
+    id: "5000",
+    in: "500",
+    it: "[B]",
+    mx: "$15.00",
+    ph: "P100",
+    ru: "56P",
+    sg: "$1.30",
+    tw: "15",
+    vn: "15000d",
+}
+
 async function build_html() {
     let message_data = []
 
@@ -41,6 +61,7 @@ async function build_html() {
 
             let country_code = '';
             let country_name = '';
+            let country_postage = '2021'; // worst case we just write the year instead of postage amt.
 
             if (record[6] !== '') {
                 message = record[6];
@@ -52,7 +73,9 @@ async function build_html() {
                     country_code = search_country_code.toLowerCase();
                     country_name = countries.getName(search_country_code, "en");
                     country_name_stamp = countries.getName(search_country_code, "ja", {select: "alias"});
+                    country_postage = postageOverrides[country_code] || country_postage;
                     if (country_name_stamp === "アメリカ合衆国") country_name_stamp = "アメリカ";
+                    if (country_name_stamp === "ロシア連邦") country_name_stamp = "ロシア";
                 }
             }
 
@@ -76,6 +99,7 @@ async function build_html() {
                 country_name: country_name,
                 country_name_stamp: country_name_stamp,
                 country_code: country_code,
+                country_postage: country_postage,
                 message: message,
                 isMsgInJP: isMsgInJP,
                 message_jp: message_jp
@@ -193,7 +217,11 @@ async function build_html() {
     }
 
     return src('src/index.handlebars')
-        .pipe(handlebars(template_data))
+        .pipe(handlebars(template_data, {helpers:{
+            'eq': function(arg1, arg2, options) {
+                return (arg1 == arg2) ? true : false;
+            }
+        }}))
         .pipe(htmlmin(htmlminoptions))
         .pipe(rename('index.html'))
         .pipe(dest('.'));

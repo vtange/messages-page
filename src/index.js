@@ -33,11 +33,6 @@ audioElement.addEventListener('canplaythrough', function() {
   }
 })
 var box_opened = false;
-var init_page = document.getElementById('init-page');
-if (window.getComputedStyle(init_page).transform === "scale(0)") {
-    // uses -ms- prefix aka IE.
-    open_box();
-}
 
 function open_box() {
     var box = document.getElementById("box-container");
@@ -50,6 +45,7 @@ function open_box() {
 
     var white_full = document.getElementById("white-full");
     var content = document.getElementById('content');
+    var init_page = document.getElementById('init-page');
 
     setTimeout(function(){
         white_full.style.opacity = 1;

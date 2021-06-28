@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="dist/index.css">
 
 <body>
+    <div id="ie11-cover"><p>Please use a different web browser to see this site.</p><p>このサイトを見るために他のウェブブラウザーを使ってください。</p></div>
     <!-- transitionary white screen for door open animation -->
     <div id="white-full"></div>
     <div id="volume-container">
@@ -149,7 +150,12 @@
                                     <div class="stamp-inner" data-code="{{country_code}}">
                                         <span class="flag-icon flag-icon-{{country_code}}" title="{{country_name}}"
                                             alt="{{country_name}}"></span>
-                                        <span class="stamp-amt">50</span>
+                                        <span class="stamp-amt">
+                                            {{#if (eq country_code "ca")}}&#127809;
+                                            {{else}}{{country_postage}}
+                                            {{/if}}
+                                        </span>
+                                        <div class="stamp-deco"></div>
                                         <div class="country-name">{{country_name_stamp}}</div>
                                     </div>
                                 </div>

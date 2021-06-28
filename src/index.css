@@ -38,7 +38,6 @@ body {
     overflow: hidden;
     background-color: aliceblue;
     display: flex;
-    -ms-transform: scale(0);
     align-items: center;
     justify-content: center;
 }
@@ -361,6 +360,16 @@ body {
     cursor: pointer;
     height: 20px;
     width: 20px;
+}
+
+#ie11-cover {
+    background-color: aliceblue;
+    transform: scale(0);
+    -ms-transform: scale(1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
 }
 
 #white-full {
@@ -707,6 +716,7 @@ blockquote>p {
     background-color: lightseagreen;
 }
 
+.stamp-inner[data-code="in"],
 .stamp-inner[data-code="br"]{
     background-color: yellowgreen;
 }
@@ -718,6 +728,19 @@ blockquote>p {
 .stamp-inner[data-code="sa"],
 .stamp-inner[data-code="ca"]{
     background-color: burlywood;
+}
+
+.stamp-inner[data-code="ca"] .stamp-amt {
+    font-size: 1rem;
+}
+
+.stamp-inner[data-code="ca"] .stamp-amt::before{
+    content: "P";
+    color: burlywood;
+    font-family: auto;
+    position: absolute;
+    left: 4px;
+    top: 3px;
 }
 
 .stamp-inner[data-code="de"],
@@ -752,21 +775,36 @@ blockquote>p {
 
 
 .stamp-amt {
-    color: rgba(255,255,255,0.90);
     font-family: "Merriweather";
-    font-size: 1rem;
+    font-size: 0.7rem;
+    opacity: 0.7;
     position: absolute;
     right: 3px;
-    top: -3px;
+    top: 0;
+    z-index: 20;
+}
+
+.stamp-deco {
+    background-image: url(./img/rose.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    opacity: 0.88;
+    right: -10px;
+    bottom: 6px;
+    width: 3rem;
+    height: 2.5rem;
 }
 
 .country-name {
     font-family: cursive;
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 900;
     height: 30px;
     margin-left: 4px;
-    color: rgba(0,0,0,0.5);
+    color: rgba(30,30,30,.7);
+    position: absolute;
+    z-index: 9999;
 }
 
 .flag-icon {
