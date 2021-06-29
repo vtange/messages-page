@@ -20,7 +20,7 @@ body {
 #bg {
     height: 100%;
     background: rgb(6,0,36);
-    background: linear-gradient(180deg, rgba(6,0,36,1) 10%, rgb(5, 4, 58) 20%, rgb(247, 248, 255) 25%);
+    background: linear-gradient(180deg, rgba(6,0,36,1) 10%, rgb(5, 4, 58) 20%, rgb(247, 248, 255) 50%);
     display: flex;
     align-items: center;
     justify-content: center;
