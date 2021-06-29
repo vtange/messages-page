@@ -743,6 +743,7 @@ blockquote>p {
     top: 3px;
 }
 
+.stamp-inner[data-code="ar"],
 .stamp-inner[data-code="de"],
 .stamp-inner[data-code="au"]{
     background-color: silver;
@@ -826,6 +827,7 @@ blockquote>p {
     background-image: url(./img/cos.png);
 }
 
+.stamp-inner[data-code="ar"] .stamp-deco,
 .stamp-inner[data-code="es"] .stamp-deco,
 .stamp-inner[data-code="it"] .stamp-deco,
 .stamp-inner[data-code="mx"] .stamp-deco {

@@ -28,6 +28,7 @@ const postageOverrides = {
     /* note: canada uses a P in a maple leaf and we have to handle this in the hbs file. */
     us: "$1.20",
     jp: "84",
+    ar: "$65",
     br: "R$2,05",
     cn: "1.20",
     de: "100",
