@@ -38,6 +38,7 @@ const postageOverrides = {
     id: "5000",
     in: "500",
     it: "[B]",
+    kr: "840",
     mx: "$15.00",
     my: "80sen",
     ph: "P100",
@@ -55,20 +56,19 @@ async function build_html() {
 
     records.map(
         record => {
-            let timestamp = record[0];
-            let username = record[1].trim();
-            let twitter = record[3].trim();
-            let country = record[4];
-            let message = record[5];
-            let message_jp = record[8];
+            const timestamp = record[0];
+            const discordmatch = record[1].match(/.*#[a-zA-Z0-9_]*/g);
+            const twittermatch = record[1].match(/@.*/g);
+            let twitter = twittermatch ? twittermatch[0].trim() : "";
+            const nickname = record[2].trim();
+            const country = record[3].replace("-"," ");
+            const message = record[5];
+            const message_jp = record[8];
 
             let country_code = '';
             let country_name = '';
+            let country_name_stamp = '';
             let country_postage = '2021'; // worst case we just write the year instead of postage amt.
-
-            if (record[6] !== '') {
-                message = record[6];
-            }
 
             if (country) {
                 search_country_code = countries.getAlpha2Code(country, 'en');
@@ -96,7 +96,7 @@ async function build_html() {
 
             message_row = {
                 timestamp: timestamp,
-                username: username,
+                username: nickname,
                 twitter: twitter,
                 country: country,
                 country_name: country_name,
