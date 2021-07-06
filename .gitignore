@@ -1,5 +1,7 @@
 node_modules
-artbook
 *.png
+!artbook/*.png
+!artbook/thumbs/*.png
+!artbook/thumbs_small/*.png
 !dist/img/*.png
 *.ico
