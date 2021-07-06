@@ -1032,6 +1032,15 @@ blockquote>p {
     #letter-msgs .card-columns {
         column-count: 3;
     }
+
+    #credits .credits-column:first-of-type {
+        margin-left: 5%;
+    }
+
+    #credits .credits-column:last-of-type {
+        margin-right: 5%;
+    }
+
     /*=Box=*/
     .wrapper {
         transform: translateY(-10vh) scale(1.3);
