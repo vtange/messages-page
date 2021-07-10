@@ -50,14 +50,14 @@ const postageOverrides = {
 
 async function build_html() {
     let message_data = []
-
+    let message_table = Object.create(null);
     let content = await fs.readFile(message_csv_file);
     let records = csvparse(content, { from_line: 2 });
 
     records.map(
         record => {
             const timestamp = record[0];
-            const discordmatch = record[1].match(/.*#[a-zA-Z0-9_]*/g);
+            const discordmatch = record[1].match(/.*#[0-9_)]*/g);
             const twittermatch = record[1].match(/@.*/g);
             let twitter = twittermatch ? twittermatch[0].trim() : "";
             const nickname = record[2].trim();
@@ -107,9 +107,23 @@ async function build_html() {
                 isMsgInJP: isMsgInJP,
                 message_jp: message_jp
             };
-            message_data.push(message_row);
+            if (discordmatch) {
+                let discord = discordmatch ? discordmatch[0].trim() : "";
+                message_table[discord] = message_row;
+            } else if (twitter) {
+                message_table[twitter] = message_row;
+            } else {
+                message_table[nickname] = message_row;
+            }
         }
     );
+
+    // Use to debug output for missing/duplicate entries
+    //console.log(JSON.stringify(Object.keys(message_table)));
+
+    for (var prop in message_table) {
+        message_data.push(message_table[prop]);
+    }
 
     let artbook_data = [
         {
@@ -131,6 +145,11 @@ async function build_html() {
             fullpage: "artbook/三世吾郎.png",
             thumbnail: "artbook/thumbs/三世吾郎.png",
             thumbnail_small: "artbook/thumbs_small/三世吾郎_.png",
+        },
+        {
+            fullpage: "artbook/Kitsune_angel.png",
+            thumbnail: "artbook/thumbs/Kitsune_angel.png",
+            thumbnail_small: "artbook/thumbs_small/Kitsune_angel_.png",
         }
     ]
 
