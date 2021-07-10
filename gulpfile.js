@@ -150,6 +150,16 @@ async function build_html() {
             fullpage: "artbook/Kitsune_angel.png",
             thumbnail: "artbook/thumbs/Kitsune_angel.png",
             thumbnail_small: "artbook/thumbs_small/Kitsune_angel_.png",
+        },
+        {
+            fullpage: "artbook/pipupapo.png",
+            thumbnail: "artbook/thumbs/pipupapo.png",
+            thumbnail_small: "artbook/thumbs_small/pipupapo_.png",
+        },
+        {
+            fullpage: "artbook/Momo_Berry.jpg",
+            thumbnail: "artbook/thumbs/Momo_Berry.jpg",
+            thumbnail_small: "artbook/thumbs_small/Momo_Berry_.jpg",
         }
     ]
 
