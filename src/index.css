@@ -372,6 +372,30 @@ body {
     z-index: 99;
 }
 
+#nojs-cover {
+    animation: slowShow 0.5s normal forwards ease-in-out;
+    animation-delay: 2s;
+    background-color: rgb(253, 213, 220);
+    border: 2px solid pink;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    opacity:0;
+    top: 2rem;
+    transform: translatex(-50%);
+    z-index: 99;
+}
+
+@keyframes slowShow {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 #white-full {
     opacity: 0;
     position: absolute;

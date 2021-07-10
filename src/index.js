@@ -1,3 +1,5 @@
+document.getElementById("nojs-cover").style.display = "none";
+
 var lid = document.querySelector("#lid");
 lid.addEventListener("click", function(e) {
     confetti.fire(e);
