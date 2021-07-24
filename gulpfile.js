@@ -160,6 +160,11 @@ async function build_html() {
             fullpage: "artbook/Momo_Berry.jpg",
             thumbnail: "artbook/thumbs/Momo_Berry.jpg",
             thumbnail_small: "artbook/thumbs_small/Momo_Berry_.jpg",
+        },
+        {
+            fullpage: "artbook/Troll_Logic.jpg",
+            thumbnail: "artbook/thumbs/Troll_Logic.jpg",
+            thumbnail_small: "artbook/thumbs_small/Troll_Logic_.jpg",
         }
     ]
 
