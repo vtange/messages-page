@@ -829,7 +829,7 @@ blockquote>p {
     height: 2.5rem;
 }
 
-.letter-msg-card-container:nth-child(2) .stamp-inner[data-code="jp"] .stamp-deco {
+.letter-msg-card-container:nth-child(even) .stamp-inner[data-code="jp"] .stamp-deco {
     background-image: url(./img/chrys.png);
 }
 
