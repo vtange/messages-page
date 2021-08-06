@@ -666,17 +666,6 @@ blockquote>p {
     font-family: 'Merriweather', serif;
 }
 
-.msg-deco {
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: none;
-    width: 5rem;
-    height: 4rem;
-    position: absolute;
-    top: -52px;
-    left: 0;
-}
-
 .sender-details {
     display: flex;
     justify-content: space-between;
