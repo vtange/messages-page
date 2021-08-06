@@ -63,6 +63,7 @@ async function build_html() {
             const nickname = record[2].trim();
             const country = record[3].replace("-"," ");
             const message = record[5];
+            const artwork_url = record[6];
             const message_jp = record[8];
 
             let country_code = '';
@@ -104,6 +105,7 @@ async function build_html() {
                 country_code: country_code,
                 country_postage: country_postage,
                 message: message,
+                artwork_url: artwork_url,
                 isMsgInJP: isMsgInJP,
                 message_jp: message_jp
             };
