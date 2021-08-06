@@ -134,3 +134,10 @@ var slider = document.getElementById("musicbox-volume");
 slider.oninput = function(e) {
     audioElement.volume = Math.min(1,this.value/100);
 }
+
+var artbookLoaded = false;
+
+function reclick(el) {
+    if (artbookLoaded) return;
+    window.setTimeout(function(){artbookLoaded=true;el.click();},0)
+}
