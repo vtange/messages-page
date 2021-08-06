@@ -136,15 +136,12 @@
             </div>
             <div class="card-columns">
                 {{#each messages}}
-                {{#if message}}
                 <div class="letter-msg-card-container" data-aos="fade-up">
                     <div class="letter-msg-card card">
                         <div class="sender-details">
                             <div class="sender-name-container">
                                 <span class="sender-name">{{username}}</span>
-                                {{#with twitter}}
-                                <span class="twitter-name text-muted">@{{this}}</span>
-                                {{/with}}
+                                <span class="twitter-name text-muted">@{{twitter}}</span>
                             </div>
                                 <div class="stamp-outer">
                                 {{#if country_code}}
@@ -171,6 +168,7 @@
                                 </div>
                         </div>
                         <div class="letter-msg">
+                        {{#if message}}
                             <blockquote class="blockquote mb-0" {{#if isMsgInJP}}lang="ja" {{/if}}>
                                 <!-- htmlmin:ignore -->
                                 <p>{{message}}</p>
@@ -184,14 +182,16 @@
                                 <!-- htmlmin:ignore -->
                             </blockquote>
                             {{/if}}
+                        {{/if}}
                             {{#if artwork_url}}
                             <hr>
-                                <p>{{artwork_url}}</p>
+                                <a href="#to-{{artwork_url}}">
+                                    <img class="msg-art" srcset="{{artwork_url}} 150w" sizes="150px" src="{{artwork_url}}" alt="" title="" />
+                                </a>
                             {{/if}}
                         </div>
                     </div>
                 </div>
-                {{/if}}
                 {{/each}}
             </div>
         </section>
@@ -206,7 +206,7 @@
             </div>
             <div id="artbook-gallery">
                 {{#each artbook_data}}
-                <a href="{{fullpage}}" data-aos="fade-up">
+                <a id="to-{{thumbnail_small}}" href="{{fullpage}}" data-aos="fade-up">
                     <img class="artbook-page" srcset="{{thumbnail_small}} 150w, {{thumbnail}} 500w" sizes="(max-width: 700px) 150px, 500px" src="{{thumbnail}}" alt="" title="" />
                 </a>
                 {{/each}}
