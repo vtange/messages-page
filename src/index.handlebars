@@ -144,7 +144,9 @@
                         <div class="sender-details">
                             <div class="sender-name-container">
                                 <span class="sender-name">{{username}}</span>
-                                <span class="twitter-name text-muted">@{{twitter}}</span>
+                                {{#with twitter}}
+                                <span class="twitter-name text-muted">@{{this}}</span>
+                                {{/with}}
                             </div>
                                 <div class="stamp-outer">
                                 {{#if country_code}}
