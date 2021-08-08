@@ -141,3 +141,13 @@ function reclick(el) {
     if (artbookLoaded) return;
     window.setTimeout(function(){artbookLoaded=true;el.click();},0)
 }
+
+var enbutton = document.getElementById('credits-en');
+var jpbutton = document.getElementById('credits-jp');
+var credits = document.getElementById('credits');
+document.getElementById('credits-en').onclick = function() {
+    credits.setAttribute("data-lang","en");
+}
+document.getElementById('credits-jp').onclick = function() {
+    credits.setAttribute("data-lang","jp");
+}

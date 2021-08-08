@@ -281,6 +281,7 @@ body {
 
 #volume-container.muted #volume-icon {
     border-color: grey;
+    background-color: #eee;
 }
 
 #volume-icon img {
@@ -913,6 +914,27 @@ blockquote>p {
     height: 8px;
     box-shadow: 0 0 25px #456692;
     margin-top: -8px;
+}
+
+#credits[data-lang="jp"] .cred-en,
+#credits[data-lang="en"] .cred-jp {
+    display: none;
+}
+
+#credits button {
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #eee;
+    font-family: arial;
+    font-weight: 600;
+    height: 40px;
+    width: 60px;
+}
+
+#credits[data-lang="jp"] #credits-jp,
+#credits[data-lang="en"] #credits-en {
+    border-color: #66cdaa;
+    background-color: #fff;
 }
 
 #credits {
