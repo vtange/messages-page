@@ -578,7 +578,7 @@ body {
     height: 10rem;
     position: absolute;
     z-index: -1;
-    right: 9px;
+    right: -27px;
     bottom: -36px;
 }
 
@@ -885,6 +885,11 @@ blockquote>p {
     box-shadow: 0 0 3px rgb(100 100 100);
 }
 
+.msg-art {
+    display: flex;
+    justify-content: center;
+}
+
 #artbook-gallery {
     margin-left: 5%;
     margin-right: 5%;
@@ -893,7 +898,7 @@ blockquote>p {
     flex-wrap: wrap;
 }
 
-#artbook a {
+#artbook-gallery a {
     background-color: white;
     border: 9px solid rgb(250,250,250);
     box-shadow: 5px 8px 20px -5px rgba(10, 10, 10, 0.75);
@@ -1038,6 +1043,10 @@ blockquote>p {
 
     #welcome-msg {
         font-size: 3rem;
+    }
+
+    .sect-title-deco {
+        right: 9px;
     }
 
     #letter-msgs .card-columns {

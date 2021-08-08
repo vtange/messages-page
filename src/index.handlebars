@@ -190,9 +190,11 @@
                         {{/if}}
                             {{#if artwork_url}}
                             <hr>
+                            <div class="msg-art">
                                 <a href="#to-{{artwork_url}}">
-                                    <img class="msg-art" srcset="{{artwork_url}} 150w" sizes="150px" src="{{artwork_url}}" alt="" title="" />
+                                    <img srcset="{{artwork_url}} 150w" sizes="150px" src="{{artwork_url}}" alt="" title="" />
                                 </a>
+                            </div>
                             {{/if}}
                         </div>
                     </div>
@@ -208,6 +210,9 @@
                 <h3 lang="ja">画集</h3>
                 <h5>（写真をクリックすると拡大できます）</h5>
                 <div class="sect-title-deco"></div>
+                <a id="msgs-shortcut" href="#letter-msgs" onclick="reclick(this)">
+                    <p>&#10140; To Messages / 手紙へ</p>
+                </a>
             </div>
             <div id="artbook-gallery">
                 {{#each artbook_data}}
@@ -310,6 +315,7 @@
                 <div class="credits-section">
                     <h4>Special Thanks</h4>
                     <p>To everyone who supports this project</p>
+                    <p>This is strictly a fan site. We are not related to Cover Corp. nor Hololive in any way.</p>
                     <img class="daisuki" src="./dist/img/daisuki.png" width="400px" height="200px"/>
                 </div>
             </div>
