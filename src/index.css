@@ -916,6 +916,11 @@ blockquote>p {
     margin-top: -8px;
 }
 
+.lang-btns {
+    display: flex;
+    flex-direction: column;
+}
+
 #credits[data-lang="jp"] .cred-en,
 #credits[data-lang="en"] .cred-jp {
     display: none;
