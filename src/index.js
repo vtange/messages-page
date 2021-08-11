@@ -83,18 +83,18 @@ function init() {
     });
 }
 
-var ytplayer;
-function onYouTubeIframeAPIReady() {
-    ytplayer = new YT.Player('ytplayer', {
-        videoId: '0NOcQ9IOX9U',
-        playerVars: {
-            'playsinline': 1
-        },
-        events: {
-            'onStateChange': onPlayerStateChange
-        }
-        });
-}
+// var ytplayer;
+// function onYouTubeIframeAPIReady() {
+//     ytplayer = new YT.Player('ytplayer', {
+//         videoId: '0NOcQ9IOX9U',
+//         playerVars: {
+//             'playsinline': 1
+//         },
+//         events: {
+//             'onStateChange': onPlayerStateChange
+//         }
+//         });
+// }
 // event that will be fired when the state of the video player changes
 function onPlayerStateChange(event) {
   if(event.data == -1 || event.data == 1) {
