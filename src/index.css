@@ -930,6 +930,7 @@ blockquote>p {
     border: 2px solid gray;
     border-radius: 10px;
     background-color: #eee;
+    color: grey;
     font-family: arial;
     font-weight: 600;
     height: 40px;
@@ -940,6 +941,7 @@ blockquote>p {
 #credits[data-lang="en"] #credits-en {
     border-color: #66cdaa;
     background-color: #fff;
+    color: #66cdaa;
 }
 
 #credits {
