@@ -926,6 +926,13 @@ blockquote>p {
     display: none;
 }
 
+.back-btn {
+    position: fixed;
+    right:0;
+    z-index: 999;
+}
+
+.back-btn,
 #credits button {
     border: 2px solid gray;
     border-radius: 10px;
@@ -937,6 +944,11 @@ blockquote>p {
     width: 60px;
 }
 
+.back-btn {
+    width: 76px;
+}
+
+.back-btn,
 #credits[data-lang="jp"] #credits-jp,
 #credits[data-lang="en"] #credits-en {
     border-color: #66cdaa;
