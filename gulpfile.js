@@ -154,6 +154,11 @@ async function build_html() {
             thumbnail_small: "artbook/thumbs_small/Kitsune_angel_.png",
         },
         {
+            fullpage: "artbook/IMG_20210810_022459153.png",
+            thumbnail: "artbook/thumbs/IMG_20210810_022459153.png",
+            thumbnail_small: "artbook/thumbs_small/IMG_20210810_022459153_.png",
+        },
+        {
             fullpage: "artbook/pipupapo.png",
             thumbnail: "artbook/thumbs/pipupapo.png",
             thumbnail_small: "artbook/thumbs_small/pipupapo_.png",
