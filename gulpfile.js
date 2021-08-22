@@ -75,7 +75,6 @@ async function build_html() {
                 search_country_code = countries.getAlpha2Code(country, 'en');
                 if (search_country_code) {
                     country_code = search_country_code.toLowerCase();
-                    country_name = countries.getName(search_country_code, "en");
                     country_name_stamp = countries.getName(search_country_code, "ja", {select: "alias"});
                     country_postage = postageOverrides[country_code] || country_postage;
                     if (country_name_stamp === "アメリカ合衆国") country_name_stamp = "アメリカ";
@@ -100,7 +99,6 @@ async function build_html() {
                 username: nickname,
                 twitter: twitter,
                 country: country,
-                country_name: country_name,
                 country_name_stamp: country_name_stamp,
                 country_code: country_code,
                 country_postage: country_postage,
